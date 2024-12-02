@@ -1,6 +1,7 @@
 ; 71
 
 ; distances in terms of pixels:
+
 (define HEIGHT 200)
 (define MIDDLE (quotient HEIGHT 2))
 (define WIDTH  400)
