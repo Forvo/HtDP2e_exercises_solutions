@@ -36,7 +36,7 @@
     (place-image cat1 
     ws (- BACKGROUND_HEIGHT (* 0.52 (image-height cat1)))BACKGROUND ))
 
-; 0.52 是把猫的图片至于背景的底部位置
+;   0.52 是把猫的图片至于背景的底部位置
 
 ; 定义主函数
 (define (main ws)
