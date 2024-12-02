@@ -13,4 +13,4 @@
   == ;(string-append "hellow" "-" (substring "helloworld" 6))
   == ;(string-append "hellow" "-" "orld")
   ==
-  "hellow_orld"
+ "hellow_orld"
