@@ -4,7 +4,8 @@
 ; 目的声明链接需求和程序，形成思路的 checklist ，用来检验程序设计思路，是不是符合需求。
 ; 后面围绕这个 checklist 展开，也就变成了 To_Do_List 。
 ; 以后都这样运用，详情请参考：
-; https://github.com/programmint/HtDP2e_exercises_solutions/blob/main/notes/%E5%8F%8D%E6%80%9D_%E7%AC%AC3%E7%AB%A0_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95.md
+; https://github.com/programint/HtDP2e-insights/blob/main/Notes/%E5%8F%8D%E6%80%9D_%E7%AC%AC3%E7%AB%A0_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95.md
+
 
 ; WISH LIST （同时也是 checklist ）
 ; WorldState：current world (cw) 由多类型 data 表示   
