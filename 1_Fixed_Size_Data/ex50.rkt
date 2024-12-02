@@ -1,6 +1,6 @@
 ; 50
 
-; yields the next state given current state s
+; yields the next state given current states
 ; TrafficLight -> TrafficLight
 
 (check-expect (traffic-light-next "red") "green")
