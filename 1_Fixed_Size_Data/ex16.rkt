@@ -5,5 +5,5 @@
   
   (image-area img) 
 
-; 考察 image-height 和 image-width
+; 考察之前的一个知识点：image-height 和 image-width
 
