@@ -65,9 +65,9 @@
 
 学习的主体，是我，不是它。
 
-## 6、所用软件
+## 5、所用软件
 
-### 6.1、编辑器：DrRacket 和 VSCodium 
+### 5.1、编辑器：DrRacket 和 VSCodium 
 
 用 DrRacket 写代码效率慢，换成了 VSCodium 
 
@@ -87,7 +87,7 @@ DrRacket 中，点击 File -> package manager ，打开包管理器。
 
 有时因为网络问题，可能安装不成功，多试几次。
 
-### 6.2、VSCodium 插件
+### 5.2、VSCodium 插件
 
 需要安装一些插件，如下：
 
@@ -115,9 +115,9 @@ markdown 插件，可以即时预览写作效果。看你选择。
 
 编辑器界面美化插件，打造沉浸式环境。看你选择。
 
-## 附：参考资料
+## 6：参考资料及其他
 
-### 第1、参考书籍
+### 6.1、参考书籍
 
 英文版：[《How to Design Programs， Second Edition》](https://htdp.org/2019-02-24/index.html)
 
@@ -146,7 +146,7 @@ markdown 插件，可以即时预览写作效果。看你选择。
 
 **[TeachYourselfCS-CN](https://github.com/izackwu/TeachYourselfCS-CN)**
 
-## 第 2 、公众号
+## 6.2 、公众号
 之前一段时间，把书里解题思路，优先公布至自己的公众号。
 
 从今起，
