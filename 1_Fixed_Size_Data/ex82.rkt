@@ -32,9 +32,9 @@
     ; 相同，返回该字母
     ; 不相同，则返回 #false
 ; string string -> string or boolean
-(define (compare-letters letter1 letter2)
+(define (compare-letters 1st-letter 2nd-letter)
     (cond
-        [(equal? letter1 letter2) letter1]
+        [(equal? 1st-letter 2nd-letter) 1st-letter]
         [else #false]))
 
 ; 测试字母比较函数
@@ -46,11 +46,11 @@
     ; 输入结构体每一字段相同，则返回该结构体字段
     ; 不相同，返回的结构体字段中放入 #false 
 ; structure structure -> structure
-(define (compare-word word1 word2 )
+(define (compare-word input-word1 input-word2 )
     (make-output-word
-       (compare-letters (input-word-1st-letter word1) (input-word-1st-letter word2))
-       (compare-letters (input-word-2nd-letter word1) (input-word-2nd-letter word2))
-       (compare-letters (input-word-3rd-letter word1) (input-word-3rd-letter word2))))
+       (compare-letters (input-word-1st-letter input-word1) (input-word-1st-letter input-word2))
+       (compare-letters (input-word-2nd-letter input-word1) (input-word-2nd-letter input-word2))
+       (compare-letters (input-word-3rd-letter input-word1) (input-word-3rd-letter input-word2))))
 
 ; 测试主函数
 (check-expect (compare-word (make-input-word "a" "r" "t")(make-input-word "a" "r" "t")) (make-output-word "a" "r" "t"))
