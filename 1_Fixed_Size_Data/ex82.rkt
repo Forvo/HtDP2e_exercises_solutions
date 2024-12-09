@@ -43,7 +43,7 @@
 
 ; 定义主函数 compare-word
 ; 读取 2 个输入结构体，比较，返回结构体
-    ; 输入结构体每一字段相同，则返回该结构体字段
+    ; 每一字段相同，则返回该结构体字段
     ; 不相同，返回的结构体字段中放入 #false 
 ; structure structure -> structure
 (define (compare-word input-word1 input-word2 )
