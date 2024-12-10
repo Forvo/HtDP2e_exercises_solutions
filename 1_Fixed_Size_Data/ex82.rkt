@@ -11,7 +11,7 @@
 
 ; -----------------------------------------------------------------------------------------------------------------------------------------------
 
-; 定义输入结构体
+; 定义输入结构体：给主函数输入数据
 ; 这里不必校验输入是否准确，因为第 75 题已经明确了是字符串
 (define-struct input-word [1st-letter 2nd-letter 3rd-letter])
 
@@ -20,7 +20,7 @@
 ; 示例
 ; (define a-word (make-input-word "a" "r" "t"))
 
-; 定义输出结构体
+; 定义输出结构体：主函数以该结构体格式，输出数据
 (define-struct output-word [1st-letter 2nd-letter 3rd-letter])
 
 ; output-word 是结构体，由3个字母或 #false 构成，字母是小写字母（ ”a“ 至 ”z“ ）构成，每个字符串长度为1
@@ -28,7 +28,7 @@
 ; 示例
 ; (define a-word(make-output-word "a" "d" "d"))
 
-; 定义字母比较函数
+; 定义字母比较函数：辅助函数，主函数用以比较2个字母是否相同
     ; 相同，返回该字母
     ; 不相同，则返回 #false
 ; string string -> string or boolean
