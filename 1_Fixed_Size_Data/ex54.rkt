@@ -13,7 +13,6 @@
 (define BG-H 300)
 (define BACKG (empty-scene BG-W BG-H))
 
-
 ; ==火箭图像、火箭中心点
 ; nubmer,image -> iamge 
 (define RKT-W 5)
@@ -139,7 +138,6 @@
 (check-expect 
   (draw-rkt 0) end-img)
 
-
 ; 火箭停止飞行函数
 (define (rkt-off-canvas? rkt-state)
   (cond
@@ -150,7 +148,6 @@
 
 ; 测试火箭停止飞行函数
 (check-expect (rkt-off-canvas? -0.01 ) #true)
-
 
 ; 定义世界程序
 ; worldstate -> any
