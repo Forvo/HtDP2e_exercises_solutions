@@ -105,6 +105,7 @@
 (define (end? ws) 
     ( >  ws  (+ (* WIDTH-OF-WORLD 3) 35 )))
 
+; 增加注释
 (check-expect (end? 1) #false )
 (check-expect (end? 10) #false )
 
