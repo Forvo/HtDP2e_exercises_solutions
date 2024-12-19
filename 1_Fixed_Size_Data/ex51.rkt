@@ -52,31 +52,31 @@
 
 ; 思路 2  (Ai 给出)
 
-;; 定义三种颜色的圆形交通灯
+; 定义三种颜色的圆形交通灯
 (define red-light (circle 50 "solid" "red"))
 (define green-light (circle 50 "solid" "green"))
 (define yellow-light (circle 50 "solid" "yellow"))
 
-;; 根据时间t的值渲染交通灯的颜色
+; 根据时间t的值渲染交通灯的颜色
 (define (render-state t)
   (cond
     [(= (modulo t 3) 0) red-light]
     [(= (modulo t 3) 1) green-light]
     [(= (modulo t 3) 2) yellow-light]))
 
-;; 每次时钟周期，t 增加 1
+; 每次时钟周期，t 增加 1
 (define (next-state t)
   (+ t 1))
 
-;; 定义运行的最大时间 (在这个例子中为 15 个周期)
+; 定义运行的最大时间 (在这个例子中为 15 个周期)
 (define max-duration 15)
 
-;; 当达到最大时长时停止
+; 当达到最大时长时停止
 (define (stop? t)
   (>= t max-duration))
 
-;; 使用big-bang来启动动画
+; 使用big-bang来启动动画
 (big-bang 0                  ; 初始状态 t = 0
-          (on-tick next-state 1) ; 每1秒钟增加1
-          (to-draw render-state)
-          (stop-when stop?))
+  (on-tick next-state 1) ; 每1秒钟增加1
+  (to-draw render-state)
+  (stop-when stop?))

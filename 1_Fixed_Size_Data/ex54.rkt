@@ -71,9 +71,10 @@
     [(and (number? rkt-state) (= rkt-state -1)) Y-START-POS]
     [(and (number? rkt-state) (> rkt-state 0)) (- rkt-state YDELTA)]
     [(and (number? rkt-state) (<= rkt-state 0)) (max -0.01 (- rkt-state YDELTA))]
-    ; 依照题意，高度不能为负，可是高度为 0 时，如果立即停止程序，对应的提示文案则不会出现
-    ; 加了这一条件， on-tick 函数会继续产生新状态，保证出现停止飞行的文案。
-      [else rkt-state]))
+  [else rkt-state]))
+
+; 依照题意，高度不能为负，可是高度为 0 时，如果立即停止程序，对应的提示文案则不会出现
+; 加了这一条件， on-tick 函数会继续产生新状态，保证出现停止飞行的文案。
 
 ; 测试时钟函数
 (check-expect (tock-y-h "resting") "resting")
@@ -103,6 +104,7 @@
             BACKG)]
 
       [(and (number? rkt-state) (= rkt-state 0)) end-img]))
+
       ; 如果  (= rkt-state 0) 函数立即停止运行，则 end-img 不会出现 
 
 ; 测试渲染火箭函数
@@ -143,7 +145,8 @@
   (cond
     [(and (number? rkt-state) (< rkt-state 0) (not (<= -3 rkt-state -1)))  #true]
     [else #false]))
-    ; 火箭高度刚刚为负数时，立即停止函数运行。
+
+; 火箭高度刚刚为负数时，立即停止函数运行。
 
 ; 测试火箭停止飞行函数
 (check-expect (rkt-off-canvas? -0.01 ) #true)
