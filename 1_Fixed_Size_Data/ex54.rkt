@@ -105,7 +105,7 @@
 
       [(and (number? rkt-state) (= rkt-state 0)) end-img]))
 
-      ; 如果  (= rkt-state 0) 函数立即停止运行，则 end-img 不会出现 
+; 如果  (= rkt-state 0) 函数立即停止运行，则 end-img 不会出现 
 
 ; 测试渲染火箭函数
 (check-expect 
