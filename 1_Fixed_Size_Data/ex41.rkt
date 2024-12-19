@@ -1,33 +1,37 @@
 ; 41
 
+; 修改历史
+; 修改了变量名的连线，由底部短横线，改为中间短横线。
+; 之前我是用 python 的短横线用法，racket 的短横线，更喜欢用中间短横线。（2024.12）
+
 ; Notice 
 ; 该书网站，函数用蓝色表示，均可点击，直接跳入对应函数介绍页面。
 
 ; 生成车轮
     ; number -> image 
-    (define WHEEL_RADIUS 5)  ;车轮半径为单一控制点
-    (define WHEEL (circle WHEEL_RADIUS "solid" "black")) 
+    (define WHEEL-RADIUS 5)  ;车轮半径为单一控制点
+    (define WHEEL (circle WHEEL-RADIUS "solid" "black")) 
 
 ;   生成车身底部
     ; number -> image
-    (define UNDERBODAY_SPACE 
-        (rectangle ( * WHEEL_RADIUS 14)(* WHEEL_RADIUS 2) "outline" (make-color 0 0 0 0)))
+    (define UNDERBODAY-SPACE 
+        (rectangle ( * WHEEL-RADIUS 14)(* WHEEL-RADIUS 2) "outline" (make-color 0 0 0 0)))
 
     ;outline 是透明的
     ; 书里给的变量 space 
-        ; (define SPACE (rectangle ... WHEEL_RADIUS ... "white"))
+        ; (define SPACE (rectangle ... WHEEL-RADIUS ... "white"))
         ; space 这变量，从命名来说，不知道用在那里
         ; 看代码才知道是怎么回事，所以不用 space 这命名了。 
 
     ; 汽车设计中一概念，轴距，指两车轮之间的距离，这个参数对车实体设计非常重要
     ; 但在虚拟程序里，这个参数用不上
 
-    (define CAR_UNDERBODY
+    (define CAR-UNDERBODY
         (overlay/offset 
-            (overlay/offset UNDERBODAY_SPACE
-                                    (- 0 (* WHEEL_RADIUS 3.5)) 0   ; 第 1 个车轮向左平移3.5倍车轮半径像素 
+            (overlay/offset UNDERBODAY-SPACE
+                                    (- 0 (* WHEEL-RADIUS 3.5)) 0   ; 第 1 个车轮向左平移3.5倍车轮半径像素 
                                     WHEEL)
-            (* WHEEL_RADIUS 3.5) 0     ; 第 2 个车轮向右平移3.5倍车轮半径像素
+            (* WHEEL-RADIUS 3.5) 0     ; 第 2 个车轮向右平移3.5倍车轮半径像素
             WHEEL))
 
             ;综上，我们是简单定义车身。
@@ -36,18 +40,18 @@
 ; 生成车身
 ; number -> image
 ; 车身有两部分组成，上半部分，下半部分
-; 车身上半部分，宽:高 = 7 倍 WHEEL_RADIUS ：1 倍 WHEEL_RADIUS
-; 车身下半部分，宽:高 = 14 倍 WHEEL_RADIUS ：2 倍 WHEEL_RADIUS
-(define CAR_BODY
-    (above (rectangle (* WHEEL_RADIUS 7) (* WHEEL_RADIUS 1)"solid" "red")
-                (rectangle (* WHEEL_RADIUS 14) (* WHEEL_RADIUS 2) "solid" "red")))
+; 车身上半部分，宽:高 = 7 倍 WHEEL-RADIUS ：1 倍 WHEEL-RADIUS
+; 车身下半部分，宽:高 = 14 倍 WHEEL-RADIUS ：2 倍 WHEEL-RADIUS
+(define CAR-BODY
+    (above (rectangle (* WHEEL-RADIUS 7) (* WHEEL-RADIUS 1)"solid" "red")
+                (rectangle (* WHEEL-RADIUS 14) (* WHEEL-RADIUS 2) "solid" "red")))
 
 ; 生成整车
 ; image -> image
 (define CAR
-        (overlay/offset CAR_UNDERBODY
-                                0  (- 0 (* WHEEL_RADIUS 1.5))     ; CAR_BODY 向上移动
-                                CAR_BODY ))
+        (overlay/offset CAR-UNDERBODY
+                                0  (- 0 (* WHEEL-RADIUS 1.5))     ; CAR-BODY 向上移动
+                                CAR-BODY ))
 
 ; 生成树
 ; number -> image 
@@ -71,7 +75,7 @@
 
 ; 背景与树结合在一起，形成新背景
     ; image -> image 
-(define BACKGROUD_WITH_TREE
+(define BACKGROUD-WITH-TREE
     (place-image tree 500 82.5 BACKGROUD))  
 
             ; Notice 
@@ -90,7 +94,7 @@
     ; image -> image 
 (define Y-CAR 89)
 (define  (render ws)
-            (place-image CAR ws  Y-CAR BACKGROUD_WITH_TREE) )
+            (place-image CAR ws  Y-CAR BACKGROUD-WITH-TREE) )
 
             ; 代码这样子写，就代表了车的中心处，距离边界左侧的 x 坐标
 
