@@ -1,12 +1,14 @@
-
+****
 # 学程序设计：学其思想
 
 ## 新决定
-还是决定了，Htdp2e 与 SICP 并行学习。
+还是决定： Htdp2e 与 SICP 并行学习。
 
-都说 SICP 很难，实在好奇，何以难？既然好奇，索性试试。当下学习之路，仍以 Htdp2e 为主，SICP 为辅。
+素闻 SICP 很难，实在好奇，何以难？偷偷翻了翻 SICP 第 1 章，仅几十页，感觉不难啊！
 
-好奇心有，轻重也得分清。 
+既如此，何不再配三分贪心，一起学。不过，当下学习之路：Htdp2e 为主，SICP 为辅。
+
+[我的 SICP 仓库：SICP-insights ](https://github.com/programint/SICP-insights)
 
 -2024.12
 
