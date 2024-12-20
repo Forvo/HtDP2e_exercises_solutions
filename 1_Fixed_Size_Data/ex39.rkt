@@ -2,9 +2,9 @@
 ; 说明
 ; 改了书里的思路，具体来讲：目的声明写在最前面，其他的依次向后推。
 ; 目的声明链接需求和程序，形成思路的 checklist ，用来检验程序设计思路，是不是符合需求。
-; 后面围绕这个 checklist 展开，也就变成了 To_Do_List 。
+; 后面围绕这个 checklist 展开，也就变成了 To-Do-List 。
 ; 以后都这样运用，详情请参考：
-; https://github.com/programint/HtDP2e-insights/blob/main/Notes/%E5%8F%8D%E6%80%9D_%E7%AC%AC3%E7%AB%A0_%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95.md
+; https://github.com/programint/HtDP2e-insights/blob/main/Notes/%E5%8F%8D%E6%80%9D-%E7%AC%AC3%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95.md
 
 
 ; WISH LIST （同时也是 checklist ）
@@ -33,13 +33,13 @@
 ; 实现过程
 ; 生成车轮
     ; number -> image 
-    (define WHEEL_RADIUS 5)  ;车轮半径为单一控制点
-    (define WHEEL (circle WHEEL_RADIUS "solid" "black")) 
+    (define WHEEL-RADIUS 5)  ;车轮半径为单一控制点
+    (define WHEEL (circle WHEEL-RADIUS "solid" "black")) 
 
 ; 生成车身底部
     ; number -> image
-    (define UNDERBODAY_SPACE 
-        (rectangle ( * WHEEL_RADIUS 14)(* WHEEL_RADIUS 2) "outline" (make-color 0 0 0 0)))
+    (define UNDERBODAY-SPACE 
+        (rectangle ( * WHEEL-RADIUS 14)(* WHEEL-RADIUS 2) "outline" (make-color 0 0 0 0)))
 
         ; Notice
             ; 这里用 rectangle，其实当时忘了empty-scene 这函数，无奈改用了 rectangle ，后面都延续了 rectangle。
@@ -47,19 +47,19 @@
 
         ;outline 是透明的
         ; 书里给的变量 space 
-            ; (define SPACE (rectangle ... WHEEL_RADIUS ... "white"))
+            ; (define SPACE (rectangle ... WHEEL-RADIUS ... "white"))
             ; space 这变量，从命名来说，不知道用在那里
             ; 看代码才知道是怎么回事，所以不用 space 这命名了。 
 
         ; 汽车设计中一概念，轴距，指两车轮之间的距离，这个参数对车实体设计非常重要
         ; 但在虚拟程序里，这个参数用不上
 
-        (define CAR_UNDERBODY
+        (define CAR-UNDERBODY
             (overlay/offset 
-                (overlay/offset UNDERBODAY_SPACE
-                                        (- 0 (* WHEEL_RADIUS 3.5)) 0   ; 第 1 个车轮向左平移3.5倍车轮半径像素 
+                (overlay/offset UNDERBODAY-SPACE
+                                        (- 0 (* WHEEL-RADIUS 3.5)) 0   ; 第 1 个车轮向左平移3.5倍车轮半径像素 
                                         WHEEL)
-                (* WHEEL_RADIUS 3.5) 0     ; 第 2 个车轮向右平移3.5倍车轮半径像素
+                (* WHEEL-RADIUS 3.5) 0     ; 第 2 个车轮向右平移3.5倍车轮半径像素
                 WHEEL))
 
                 ;综上，只是简单定义车身。
@@ -68,19 +68,19 @@
 ; 生成车身
     ; number -> image
     ; 车身有两部分组成，上半部分，下半部分
-    ; 车身上半部分，宽:高 = 7 倍 WHEEL_RADIUS ：1 倍 WHEEL_RADIUS
-    ; 车身下半部分，宽:高 = 14 倍 WHEEL_RADIUS ：2 倍 WHEEL_RADIUS
+    ; 车身上半部分，宽:高 = 7 倍 WHEEL-RADIUS ：1 倍 WHEEL-RADIUS
+    ; 车身下半部分，宽:高 = 14 倍 WHEEL-RADIUS ：2 倍 WHEEL-RADIUS
 
-    (define CAR_BODY
-        (above (rectangle (* WHEEL_RADIUS 7) (* WHEEL_RADIUS 1)"solid" "red")
-                    (rectangle (* WHEEL_RADIUS 14) (* WHEEL_RADIUS 2) "solid" "red")))
+    (define CAR-BODY
+        (above (rectangle (* WHEEL-RADIUS 7) (* WHEEL-RADIUS 1)"solid" "red")
+                    (rectangle (* WHEEL-RADIUS 14) (* WHEEL-RADIUS 2) "solid" "red")))
 
 ; 生成整车
     ; image -> image
     (define CAR
-            (overlay/offset CAR_UNDERBODY
-                                    0  (- 0 (* WHEEL_RADIUS 1.5))     ; CAR_BODY 向上移动
-                                    CAR_BODY ))
+            (overlay/offset CAR-UNDERBODY
+                                    0  (- 0 (* WHEEL-RADIUS 1.5))     ; CAR-BODY 向上移动
+                                    CAR-BODY ))
 
         ; 起初用 above，效果不佳，才转用 overlay/offset
 

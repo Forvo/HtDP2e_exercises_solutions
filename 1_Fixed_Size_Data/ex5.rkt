@@ -1,9 +1,9 @@
 ; 5
 
-(define (tree3 standard_height)
+(define (tree3 standard-height)
     (above
-        (triangle standard_height "solid" "green")
-        (rectangle (* standard_height (/ 1 4) ) (* standard_height (/ (sqrt 3) 3))"solid" "gray")))
+        (triangle standard-height "solid" "green")
+        (rectangle (* standard-height (/ 1 4) ) (* standard-height (/ (sqrt 3) 3))"solid" "gray")))
 
 (tree3 50) 
 

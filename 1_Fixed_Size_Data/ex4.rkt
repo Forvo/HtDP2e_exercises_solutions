@@ -1,24 +1,24 @@
 ; 4
 
 (define str "ABCDEFGHI") ; 用 ABCDEFGHI，便于核对答案
-(define natural_number 8)
-    (define str_length (string-length str)) 
+(define natural-number 8)
+    (define str-length (string-length str)) 
 
-(define (delete_letter natural_number) 
+(define (delete-letter natural-number) 
     (cond
-        [(= natural_number 0)
+        [(= natural-number 0)
         (string-append "输入的整数要小于或等于" (number->string(string-length str )))]
 
-        [(<= natural_number str_length)
-        (string-append (substring str 0 (- natural_number 1))(substring str natural_number ))]
+        [(<= natural-number str-length)
+        (string-append (substring str 0 (- natural-number 1))(substring str natural-number ))]
 
-        [(> natural_number (string-length str))
+        [(> natural-number (string-length str))
         (string-append "输入的整数要小于或等于" (number->string(string-length str )))]))
 
-(delete_letter natural_number) 
+(delete-letter natural-number) 
 
 ; 参考思路
-    (define str "hello_world")
+    (define str "hello-world")
     (define i 5)
     (define (string-del str i) 
         (string-append (substring str 0 i ) (substring str i+1)))

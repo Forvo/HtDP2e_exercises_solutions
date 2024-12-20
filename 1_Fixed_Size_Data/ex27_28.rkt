@@ -1,27 +1,27 @@
-; 27_28
+; 27-28
 
   ; 27和28题是属于一个题目，合在一起。
 
 ;Constants
-  (define BASE_ATTENDES 120) ;基准人数
-  (define MARGINAL_ATTENDES 15) ;边际人数，指人数受价格影响，增加或减少的人数，这词汇来源于经济学
+  (define BASE-ATTENDES 120) ;基准人数
+  (define MARGINAL-ATTENDES 15) ;边际人数，指人数受价格影响，增加或减少的人数，这词汇来源于经济学
 
-  (define CURRENT_PRICE 5) ;定义当前票价
-  (define MARGINAL_PRICE 0.10) ;定义边际票价，1美元 = 100 美分，所以小数点后两位数字。
+  (define CURRENT-PRICE 5) ;定义当前票价
+  (define MARGINAL-PRICE 0.10) ;定义边际票价，1美元 = 100 美分，所以小数点后两位数字。
 
-  (define FIXED_COSTS 180) ;定义固定成本
-  (define MARGINAL_COST 0.04) ;定义边际成本，1美元 = 100 美分，所以小数点后两位数字。
+  (define FIXED-COSTS 180) ;定义固定成本
+  (define MARGINAL-COST 0.04) ;定义边际成本，1美元 = 100 美分，所以小数点后两位数字。
 
 
 ; functions
   (define (attendees ticket-price) ;定义到场人数
-    (- BASE_ATTENDES (* (- ticket-price CURRENT_PRICE) (/ MARGINAL_ATTENDES MARGINAL_PRICE))))
+    (- BASE-ATTENDES (* (- ticket-price CURRENT-PRICE) (/ MARGINAL-ATTENDES MARGINAL-PRICE))))
 
   (define (revenue ticket-price) ;定义收入
     (* ticket-price (attendees ticket-price)))
 
   (define (cost ticket-price) ;定义成本
-    (+ FIXED_COSTS (* MARGINAL_COST (attendees ticket-price))))
+    (+ FIXED-COSTS (* MARGINAL-COST (attendees ticket-price))))
 
   (define (profit ticket-price) ;定义利润（收入 - 成本）
     (- (revenue ticket-price)
