@@ -29,8 +29,8 @@
 ; (define a-word(make-output-word "a" "d" "d"))
 
 ; 定义字母比较函数：辅助函数，主函数用以比较2个字母是否相同
-    ; 相同，返回该字母
-    ; 不相同，则返回 #false
+; 相同，返回该字母
+; 不相同，则返回 #false
 ; string string -> string or boolean
 (define (compare-letters 1st-letter 2nd-letter)
     (cond
@@ -43,8 +43,8 @@
 
 ; 定义主函数 compare-word
 ; 读取 2 个输入结构体，比较，返回结构体
-    ; 每一字段相同，则返回该结构体字段
-    ; 不相同，返回的结构体字段中放入 #false 
+; 每一字段相同，则返回该结构体字段
+; 不相同，返回的结构体字段中放入 #false 
 ; structure structure -> structure
 (define (compare-word input-word1 input-word2 )
     (make-output-word
